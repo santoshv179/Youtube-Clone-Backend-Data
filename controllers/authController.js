@@ -17,7 +17,7 @@ export const registerUser = async (req, res) => {
         return res.status(400).json({ message: 'Email is already registered' });
       }
       if (userExists.username === username) {
-        return res.status(400).json({ message: 'Username is already taken' });
+        return res.status(400).json({ message: 'Username is already taken ' });
       }
     }
 

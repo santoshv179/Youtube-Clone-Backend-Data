@@ -27,46 +27,64 @@ This API handles **user authentication**, **video uploads**, **channel managemen
 - **Environment Variables:** dotenv
 
 ---
+## 📡 API Endpoints
 
-## API Endpoints
-Auth Routes (/api/auth)
-Method	Endpoint	Description	Auth Required
-POST	/register	Register new user	❌
-POST	/login	Login user	❌
-POST	/logout	Logout user	✅
-GET	/me	Get logged-in user	✅
+---
 
-Channel Routes (/api/channels)
-Method	Endpoint	Description	Auth Required
-GET	/	Get all channels	❌
-POST	/	Create channel (with files)	✅
-GET	/me	Get my channel	✅
-GET	/:id	Get channel by ID	❌
-GET	/:id/videos	Get videos from a channel	❌
-PUT	/:id	Update channel	✅
-DELETE	/:id	Delete channel	✅
-POST	/:id/subscribe	Subscribe to channel	✅
-POST	/:id/unsubscribe	Unsubscribe from channel	✅
+### **Auth Routes** (`/api/auth`)
 
-Video Routes (/api/videos)
-Method	Endpoint	Description	Auth Required
-GET	/	Get all videos	❌
-GET	/user	Get logged-in user's videos	✅
-GET	/search	Search videos by title	❌
-GET	/category/:cat	Filter by category	❌
-GET	/:id	Get video by ID	❌
-POST	/	Upload new video	✅
-PUT	/:id	Update video	✅
-DELETE	/:id	Delete video	✅
-POST	/:id/like	Like a video	✅
-POST	/:id/dislike	Dislike a video	✅
+| Method | Endpoint   | Description         | Auth Required |
+|--------|-----------|---------------------|--------------|
+| POST   | /register | Register new user   | ❌           |
+| POST   | /login    | Login user          | ❌           |
+| POST   | /logout   | Logout user         | ✅           |
+| GET    | /me       | Get logged-in user  | ✅           |
 
-Comment Routes (/api/comments)
-Method	Endpoint	Description	Auth Required
-POST	/:videoId	Add comment to a video	✅
-GET	/:videoId	Get comments for a video	❌
-PUT	/:commentId	Update comment	✅
-DELETE	/:commentId	Delete comment	✅
+---
+
+### **Channel Routes** (`/api/channels`)
+
+| Method | Endpoint            | Description                   | Auth Required |
+|--------|--------------------|--------------------------------|--------------|
+| GET    | /                  | Get all channels              | ❌           |
+| POST   | /                  | Create channel (with files)   | ✅           |
+| GET    | /me                | Get my channel                | ✅           |
+| GET    | /:id               | Get channel by ID             | ❌           |
+| GET    | /:id/videos        | Get videos from a channel     | ❌           |
+| PUT    | /:id               | Update channel                | ✅           |
+| DELETE | /:id               | Delete channel                | ✅           |
+| POST   | /:id/subscribe     | Subscribe to channel          | ✅           |
+| POST   | /:id/unsubscribe   | Unsubscribe from channel      | ✅           |
+
+---
+
+### **Video Routes** (`/api/videos`)
+
+| Method | Endpoint           | Description                   | Auth Required |
+|--------|-------------------|--------------------------------|--------------|
+| GET    | /                 | Get all videos                 | ❌           |
+| GET    | /user             | Get logged-in user's videos    | ✅           |
+| GET    | /search           | Search videos by title         | ❌           |
+| GET    | /category/:cat    | Filter by category             | ❌           |
+| GET    | /:id              | Get video by ID                | ❌           |
+| POST   | /                 | Upload new video               | ✅           |
+| PUT    | /:id              | Update video                   | ✅           |
+| DELETE | /:id              | Delete video                   | ✅           |
+| POST   | /:id/like         | Like a video                   | ✅           |
+| POST   | /:id/dislike      | Dislike a video                | ✅           |
+
+---
+
+### **Comment Routes** (`/api/comments`)
+
+| Method | Endpoint         | Description                  | Auth Required |
+|--------|-----------------|------------------------------|--------------|
+| POST   | /:videoId       | Add comment to a video       | ✅           |
+| GET    | /:videoId       | Get comments for a video     | ❌           |
+| PUT    | /:commentId     | Update comment               | ✅           |
+| DELETE | /:commentId     | Delete comment               | ✅           |
+
+---
 
 
 ---
